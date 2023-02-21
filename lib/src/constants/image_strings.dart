@@ -14,3 +14,6 @@ const String tOnBroadingImage3 =
 // -- Welcome Screen Image
 const String tWelcomeScreenImage =
     "assets/images/welcome_images/welcome_screen_image.png";
+
+// -- Login Image
+const String tGoogleLogoImage = "assets/logo/google_logo.png";
