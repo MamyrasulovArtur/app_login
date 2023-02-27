@@ -1,9 +1,12 @@
+import 'package:app_doc_1/src/common_widgets/form/form_heared_widget.dart';
 import 'package:app_doc_1/src/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../constants/image_strings.dart';
+import '../../../../constants/text_strings.dart';
 import 'widgets/login_footer_widget.dart';
 import 'widgets/login_form_widget.dart';
-import 'widgets/login_header_widget.dart';
+
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -19,7 +22,12 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                LoginHeaderWidget(size: size),
+                FormHearedWidget(
+                  size: size,
+                  image: tWelcomeScreenImage,
+                  title: tLoginTitle,
+                  subTitle: tLoginSubTitle,
+                ),
                 const LoginForm(),
                 const LoginFooterWidget()
               ],

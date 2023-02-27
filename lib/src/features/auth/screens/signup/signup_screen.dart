@@ -2,7 +2,11 @@ import 'package:app_doc_1/src/common_widgets/form/form_heared_widget.dart';
 import 'package:app_doc_1/src/constants/image_strings.dart';
 import 'package:app_doc_1/src/constants/sizes.dart';
 import 'package:app_doc_1/src/constants/text_strings.dart';
+import 'package:app_doc_1/src/features/auth/screens/login/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'widgets/signup_form_widget.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -23,44 +27,37 @@ class SignUpScreen extends StatelessWidget {
                   title: tSignUpTitle,
                   subTitle: tSignUpSubTitle,
                 ),
-                Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: tFormHeight - 10),
-                  child: Form(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(height: tFormHeight - 20),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            label: Text(tFullName),
-                            prefixIcon: Icon(Icons.person_outline_outlined),
-                          ),
+                const SignUpFormWidget(),
+                Column(
+                  children: [
+                    const Text("OR"),
+                    const SizedBox(height: tFormHeight - 20),
+                    SizedBox(
+                      width: double.infinity,
+                      child: OutlinedButton.icon(
+                        onPressed: () {},
+                        icon: const Image(
+                          image: AssetImage(tGoogleLogoImage),
+                          width: 20.0,
                         ),
-                        const SizedBox(height: tFormHeight - 20),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            label: Text(tEmail),
-                            prefixIcon: Icon(Icons.email_outlined),
-                          ),
-                        ),
-                        const SizedBox(height: tFormHeight - 20),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            label: Text(tFullName),
-                            prefixIcon: Icon(Icons.numbers_outlined),
-                          ),
-                        ),
-                        const SizedBox(height: tFormHeight - 20),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            label: Text(tPassword),
-                            prefixIcon: Icon(Icons.fingerprint),
-                          ),
-                        ),
-                      ],
+                        label: const Text(tSignInWithGoogle),
+                      ),
                     ),
-                  ),
+                    TextButton(
+                      onPressed: () {
+                        Get.to(() => const LoginScreen());
+                      },
+                      child: Text.rich(
+                        TextSpan(children: [
+                          TextSpan(
+                            text: tAlreadyHaveAnAccount,
+                            style: Theme.of(context).textTheme.bodyLarge,
+                          ),
+                          TextSpan(text: tLogin.toUpperCase()),
+                        ]),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

@@ -1,6 +1,7 @@
 // -- Generic Text
 const String tLogin = "Login";
 const String tSignup = "Signup";
+const String tNext = "Next";
 
 // -- Splash Screen Text
 const String tAppName = ".appable/";
@@ -38,6 +39,24 @@ const String tDontHaveAnAccount = "Don't have an Account?  ";
 
 const String tSignUpTitle = "Get On Board!";
 const String tSignUpSubTitle = "Create your profile to start your Journey.";
-const String tAlreadyHaveAnAccount = "Already have an Account?";
+const String tAlreadyHaveAnAccount = "Already have an Account?  ";
 const String tFullName = "Full Name";
 const String tPhoneNo = "Phone No";
+
+//  -- Forget Password Text
+
+const String tForgetPasswordTitle = "Make Selection!";
+const String tForgetPasswordSubTitle =
+    "Select one of the options given below  to reset your password.";
+const String tResetViaEMail = "Reset via E-Mail Verification.";
+const String tResetViaPhone = "Reset via Phone Verification.";
+
+// -- Forget Password Via Phone Text
+
+const String tForgetPhoneSubTitle =
+    " Enter your registered Phone No to receive OTP";
+
+// -- Forget  Password Via E-Mail Text
+
+const String tForgetEMailSubTitle =
+    " Enter your registered E-Mail to receive OTP";
