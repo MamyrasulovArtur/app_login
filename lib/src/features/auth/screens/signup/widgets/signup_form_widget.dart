@@ -10,6 +10,7 @@ class SignUpFormWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: avoid_unnecessary_containers
     return Container(
       // padding: const EdgeInsets.symmetric(horizontal: tFormHeight - 10),
       child: Form(

@@ -20,3 +20,6 @@ const String tGoogleLogoImage = "assets/logo/google_logo.png";
 // -- ForGet Password
 const String tForGetPasswordImage =
     "assets/images/forget_password/forget_password.png";
+
+// -- Dashboard Images
+const String tUserProfileImage = "assets/images/dashboard/dash_person.png";

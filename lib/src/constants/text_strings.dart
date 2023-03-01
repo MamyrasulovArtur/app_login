@@ -60,3 +60,20 @@ const String tForgetPhoneSubTitle =
 
 const String tForgetEMailSubTitle =
     " Enter your registered E-Mail to receive OTP";
+
+// --OTP Screen Text
+
+const String tOtpTitle = "CO\nDE";
+const String tOtpSubTitle = "Verification";
+const String tOtpMessege = "Enter the verification code sent  at!";
+
+// -- Dashboard Screen Text
+
+const String tDashboardTitle = "Hey, Coding with T";
+const String tDashboardHeading = "Explore Courses";
+const String tDashboardSearch = "Search...";
+const String tDashboardBannerTitle1 = "Android for Beginners";
+const String tDashboardBannerTitle2 = "Java";
+const String tDashboardBannerSubTitle = "10 Lessons";
+const String tDashboardButton = "View All";
+const String tDashboardTopCourses = "Top Courses";
