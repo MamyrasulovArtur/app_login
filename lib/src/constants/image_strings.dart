@@ -23,3 +23,8 @@ const String tForGetPasswordImage =
 
 // -- Dashboard Images
 const String tUserProfileImage = "assets/images/dashboard/dash_person.png";
+const String tBannerImage1 = "assets/images/dashboard/dash_01.png";
+const String tBannerImage2 = "assets/images/dashboard/dash_02.png";
+const String tBookmarkIcon = "assets/images/dashboard/dash_icon.png";
+const String tDashboardImage1 = "assets/images/dashboard/dash_image_01.png";
+const String tDashboardImage2 = "assets/images/dashboard/dash_image_02.png";
