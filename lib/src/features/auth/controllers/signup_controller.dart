@@ -1,3 +1,4 @@
+import 'package:app_doc_1/src/repository/auth_repository/auth_repository.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
@@ -8,8 +9,7 @@ class SignUpController extends GetxController {
   final fullName = TextEditingController();
   final phoneNo = TextEditingController();
 
-  void registrerUser(String email,String password){
-
+  void registrerUser(String email, String password) {
+    AuthRepository.instance.createUserWithEmailAndPassword(email, password);
   }
-
 }

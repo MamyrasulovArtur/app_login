@@ -1,4 +1,5 @@
 import 'package:app_doc_1/src/features/auth/screens/splash_screen/splash_screen.dart';
+import 'package:app_doc_1/src/repository/auth_repository/auth_repository.dart';
 import 'package:app_doc_1/src/utils/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -7,7 +8,7 @@ import 'package:get/get.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp().then((value) => Get.put(AuthRepository()));
   runApp(const App());
 }
 
