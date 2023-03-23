@@ -11,6 +11,8 @@ import 'package:get/get.dart';
 
 import '../../../../common_widgets/fade_in_animation/fade_in_animation_controller.dart';
 
+//import '../../../../common_widgets/fade_in_animation/fade_in_animation_controller.dart';
+
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 

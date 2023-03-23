@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:app_doc_1/src/common_widgets/fade_in_animation/fade_in_animation_madel.dart';
 import 'package:app_doc_1/src/constants/colors.dart';
 import 'package:app_doc_1/src/constants/sizes.dart';
@@ -14,6 +16,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("SplashScreen");
     // var animateValue = splashController.animate.value;
     final controller = Get.put(TFadeInAnimationController());
     controller.startSplashAnimation();
