@@ -27,7 +27,7 @@ class AuthRepository extends GetxController {
   }
 
   void phoneAuthentication(String phoneNo) async {
-    log('$phoneNo');
+    log(phoneNo);
     await _auth.verifyPhoneNumber(
         phoneNumber: phoneNo,
         verificationCompleted: (credential) async {

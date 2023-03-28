@@ -1,5 +1,6 @@
-import 'package:app_doc_1/src/repository/auth_repository/auth_repository.dart';
+import 'package:app_doc_1/src/features/core/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../constants/colors.dart';
 import '../../../../../constants/image_strings.dart';
@@ -32,7 +33,8 @@ class DashboardAppBar extends StatelessWidget implements PreferredSizeWidget {
               color: isDarkMode ? tDarkColor : tCardBgColor),
           child: IconButton(
             onPressed: () {
-              AuthRepository.instance.logout();
+              // AuthRepository.instance.logout();
+              Get.to(() => const ProfileScreen());
             },
             icon: const Image(
               image: AssetImage(tUserProfileImage),
