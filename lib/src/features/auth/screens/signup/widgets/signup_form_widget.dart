@@ -73,7 +73,7 @@ class SignUpFormWidget extends StatelessWidget {
                       );
                       SignUpController.instance
                           .phoneAuthentication(user.phoneNo);
-                      Get.to(() => OTPScreen());
+                      Get.to(() => const OTPScreen());
                     }
                   },
                   child: Text(tSignup.toUpperCase()),
