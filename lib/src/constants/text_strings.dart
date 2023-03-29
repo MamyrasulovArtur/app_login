@@ -96,5 +96,5 @@ const String tMenu3 = "User Management";
 //-- Update Profile Screen- Text
 
 const String tDelete = "Delete";
-const String tJoined = "Joined";
+const String tJoined = "Joined ";
 const String tJoinedAt = "31 October 2023";

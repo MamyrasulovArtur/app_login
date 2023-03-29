@@ -6,13 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// ignore: must_be_immutable
 class OTPScreen extends StatelessWidget {
-  OTPScreen({super.key});
-  // ignore: prefer_typing_uninitialized_variables
-  var otp;
+  const OTPScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
+    var otp;
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(20),
@@ -48,8 +47,7 @@ class OTPScreen extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   log("OTP is=>$otp");
-                OTPController.instance.verifyOTP(otp);
-
+                  OTPController.instance.verifyOTP(otp);
                 },
                 child: const Text(tNext),
               ),

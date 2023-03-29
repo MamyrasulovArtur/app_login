@@ -3,22 +3,22 @@ import 'package:flutter/material.dart';
 
 class TTextFormFieldTheme {
   TTextFormFieldTheme._();
-  static InputDecorationTheme lightInputDecorationTheme =
-      const InputDecorationTheme(
-    border: OutlineInputBorder(),
+  static InputDecorationTheme lightInputDecorationTheme = InputDecorationTheme(
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
     prefixIconColor: tSecondaryColor,
-    floatingLabelStyle: TextStyle(color: tSecondaryColor),
+    floatingLabelStyle: const TextStyle(color: tSecondaryColor),
     focusedBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: tSecondaryColor, width: 2.0),
+      borderRadius: BorderRadius.circular(50),
+      borderSide: const BorderSide(color: tSecondaryColor, width: 2.0),
     ),
   );
-  static InputDecorationTheme darkInputDecorationTheme =
-      const InputDecorationTheme(
-    border: OutlineInputBorder(),
+  static InputDecorationTheme darkInputDecorationTheme = InputDecorationTheme(
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
     prefixIconColor: tPrimaryColor,
-    floatingLabelStyle: TextStyle(color: tPrimaryColor),
+    floatingLabelStyle: const TextStyle(color: tPrimaryColor),
     focusedBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: tPrimaryColor, width: 2.0),
+      borderRadius: BorderRadius.circular(50),
+      borderSide: const BorderSide(color: tPrimaryColor, width: 2.0),
     ),
   );
 }
