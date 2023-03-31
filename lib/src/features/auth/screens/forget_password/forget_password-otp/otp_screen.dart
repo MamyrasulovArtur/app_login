@@ -4,6 +4,7 @@ import 'package:app_doc_1/src/constants/text_strings.dart';
 import 'package:app_doc_1/src/features/auth/controllers/otp_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OTPScreen extends StatelessWidget {
@@ -11,6 +12,7 @@ class OTPScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var otpController = Get.put(OTPController());
     var otp;
     return Scaffold(
       body: Container(

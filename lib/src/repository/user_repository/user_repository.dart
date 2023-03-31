@@ -22,7 +22,22 @@ class UserRepository extends GetxController {
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Colors.redAccent.withOpacity(0.1),
           colorText: Colors.red);
-      log(error.toString());
+      log("ERROR " + error.toString());
     });
+  }
+
+  Future<UserModel> getUserDetails(String email) async {
+    final snapshot =
+        await _db.collection("Users").where("Email", isEqualTo: email).get();
+    final userData = snapshot.docs.map((e) => UserModel.fromSnapshot(e)).single;
+    return userData;
+  }
+
+  Future<List<UserModel>> allUser() async {
+    final snapshot = await _db.collection("Users").get();
+    final userData =
+        snapshot.docs.map((e) => UserModel.fromSnapshot(e)).toList();
+    log(userData[0].email);
+    return userData;
   }
 }

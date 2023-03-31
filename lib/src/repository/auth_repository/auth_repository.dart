@@ -26,7 +26,7 @@ class AuthRepository extends GetxController {
         : Get.offAll(() => const DashBoard());
   }
 
-  void phoneAuthentication(String phoneNo) async {
+  Future<void> phoneAuthentication(String phoneNo) async {
     log(phoneNo);
     await _auth.verifyPhoneNumber(
         phoneNumber: phoneNo,
@@ -55,7 +55,7 @@ class AuthRepository extends GetxController {
     return credentials.user != null ? true : false;
   }
 
-  Future<String?> createUserWithEmailAndPassword(
+  Future<String?>  createUserWithEmailAndPassword(
       String email, String password) async {
     try {
       await _auth.createUserWithEmailAndPassword(

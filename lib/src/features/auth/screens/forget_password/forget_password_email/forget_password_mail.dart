@@ -45,7 +45,7 @@ class ForgetPasswordMailScreen extends StatelessWidget {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                            Get.to(() =>  OTPScreen());
+                            Get.to(() => const  OTPScreen());
                           },
                           child: const Text(tNext),
                         ),
