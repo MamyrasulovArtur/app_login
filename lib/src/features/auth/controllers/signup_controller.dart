@@ -16,6 +16,7 @@ class SignUpController extends GetxController {
 
   final userRepo = Get.put(UserRepository());
   final controller = Get.put(OTPController());
+
   void registrerUser(String email, String password) {
     String? error = AuthRepository.instance
         .createUserWithEmailAndPassword(email, password) as String?;
@@ -26,7 +27,7 @@ class SignUpController extends GetxController {
     }
   }
 
-  Future<void> createUser(UserModel user) async {
+  Future<void> createUserS(UserModel user) async {
     await userRepo.createUser(user);
     phoneAuthentication(user.phoneNo);
     Get.to(() => const OTPScreen());
@@ -34,5 +35,9 @@ class SignUpController extends GetxController {
 
   void phoneAuthentication(String phoneNo) {
     AuthRepository.instance.phoneAuthentication(phoneNo);
+  }
+
+  void googleAuth() async {
+    await userRepo.signInWithGoogle();
   }
 }

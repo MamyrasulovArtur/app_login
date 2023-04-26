@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
+import '../../../auth/service/auth_service.dart';
 import 'widgets/profile_menu_widget.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -14,6 +15,8 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(AuthService());
+
     final textTheme = Theme.of(context).textTheme;
     var isDart = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Scaffold(
@@ -21,7 +24,9 @@ class ProfileScreen extends StatelessWidget {
           elevation: 0.0,
           backgroundColor: Colors.transparent,
           leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.back();
+            },
             icon: const Icon(LineAwesomeIcons.angle_left),
             color: isDart ? Colors.white : Colors.black,
           ),
@@ -108,7 +113,9 @@ class ProfileScreen extends StatelessWidget {
               ProfileMenuWidget(
                   textTheme: textTheme,
                   icon: LineAwesomeIcons.alternate_sign_out,
-                  onPress: () {},
+                  onPress: () async {
+                    await controller.signOut();
+                  },
                   textColor: Colors.red,
                   endIcon: false,
                   title: "Logout"),

@@ -1,17 +1,20 @@
+import 'dart:developer';
+
 import 'package:app_doc_1/src/common_widgets/fade_in_animation/animation_design.dart';
 import 'package:app_doc_1/src/common_widgets/fade_in_animation/fade_in_animation_madel.dart';
 import 'package:app_doc_1/src/constants/colors.dart';
 import 'package:app_doc_1/src/constants/image_strings.dart';
 import 'package:app_doc_1/src/constants/sizes.dart';
 import 'package:app_doc_1/src/constants/text_strings.dart';
+import 'package:app_doc_1/src/features/auth/models/user.dart';
 import 'package:app_doc_1/src/features/auth/screens/login/login_screen.dart';
 import 'package:app_doc_1/src/features/auth/screens/signup/signup_screen.dart';
+import 'package:app_doc_1/src/features/auth/service/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../common_widgets/fade_in_animation/fade_in_animation_controller.dart';
 
-//import '../../../../common_widgets/fade_in_animation/fade_in_animation_controller.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -19,6 +22,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(TFadeInAnimationController());
+    final controllerAnon = Get.put(AuthService());
     controller.startAnimation();
     final mediaQuery = MediaQuery.of(context);
     var brightness = mediaQuery.platformBrightness;
@@ -64,6 +68,7 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                  
                   Row(
                     children: [
                       Expanded(
@@ -84,6 +89,24 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                  SizedBox(
+                    width: mediaQuery.size.width * 0.5,
+                    child: OutlinedButton.icon(
+                      icon: const Icon(Icons.person),
+                      label: const Text('Anonimna'),
+                      onPressed: () async {
+                        final result =
+                            await controllerAnon.signInAnon();
+                        // ignore: unnecessary_null_comparison
+                        if (result == null) {
+                          log("Error signing in");
+                        } else {
+                          log("Signed in");
+                          log(result.uid.toString());
+                        }
+                      },
+                    ),
                   ),
                 ],
               ),

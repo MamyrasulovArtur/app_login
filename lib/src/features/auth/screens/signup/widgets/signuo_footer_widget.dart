@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../constants/image_strings.dart';
 import '../../../../../constants/sizes.dart';
 import '../../../../../constants/text_strings.dart';
+import '../../../controllers/signup_controller.dart';
 import '../../login/login_screen.dart';
 
 class SignUpFooterWidget extends StatelessWidget {
@@ -14,6 +14,7 @@ class SignUpFooterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignUpController());
     return Column(
       children: [
         const Text("OR"),
@@ -21,8 +22,10 @@ class SignUpFooterWidget extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: OutlinedButton.icon(
-              onPressed: () {},
-              icon: const Image(
+              onPressed: () {
+                controller.googleAuth();
+              },
+              icon: const Image(                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
                 image: AssetImage(tGoogleLogoImage),
                 width: 20.0,
               ),

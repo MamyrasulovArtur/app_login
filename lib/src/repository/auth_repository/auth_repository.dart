@@ -18,12 +18,14 @@ class AuthRepository extends GetxController {
     firebaseUser = Rx<User?>(_auth.currentUser); // OR  as Rx<User?>;
     firebaseUser.bindStream(_auth.userChanges());
     ever(firebaseUser, _setInitialScreen);
+    log("FirebaseUser=>$firebaseUser");
   }
 
   _setInitialScreen(User? user) {
     user == null
         ? Get.offAll(() => const WelcomeScreen())
         : Get.offAll(() => const DashBoard());
+    log("User=>$user");
   }
 
   Future<void> phoneAuthentication(String phoneNo) async {
@@ -32,15 +34,16 @@ class AuthRepository extends GetxController {
         phoneNumber: phoneNo,
         verificationCompleted: (credential) async {
           await _auth.signInWithCredential(credential);
+          log("Credential=>$credential");
         },
-        verificationFailed: (e) {
+        verificationFailed: (e) async {
           if (e.code == 'invalid-phone-number') {
             Get.snackbar('Error', 'The provided phone number is not valid');
           } else {
             Get.snackbar('Error', 'Something went wrong. Try again');
           }
         },
-        codeSent: (verificationId, resendToken) {
+        codeSent: (verificationId, resendToken) async {
           this.verificationId.value = verificationId;
         },
         codeAutoRetrievalTimeout: (verificationId) {
@@ -49,13 +52,16 @@ class AuthRepository extends GetxController {
   }
 
   Future<bool> verifyOTP(String otp) async {
-    var credentials = await _auth.signInWithCredential(
-        PhoneAuthProvider.credential(
-            verificationId: verificationId.value, smsCode: otp));
+    var credentials =
+        await _auth.signInWithCredential(PhoneAuthProvider.credential(
+      verificationId: verificationId.value,
+      smsCode: otp,
+    ));
+    log("OTP=>$otp");
     return credentials.user != null ? true : false;
   }
 
-  Future<String?>  createUserWithEmailAndPassword(
+  Future<String?> createUserWithEmailAndPassword(
       String email, String password) async {
     try {
       await _auth.createUserWithEmailAndPassword(

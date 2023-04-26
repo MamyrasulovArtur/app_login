@@ -1,7 +1,10 @@
 import 'package:app_doc_1/src/constants/sizes.dart';
 import 'package:app_doc_1/src/constants/text_strings.dart';
+import 'package:app_doc_1/src/features/core/screens/profile/ubdate_profile_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../ubdate_data_screen/ubdate_data_screen.dart';
 import 'widgets/appbar.dart';
 import 'widgets/banners.dart';
 import 'widgets/categories.dart';
@@ -23,8 +26,26 @@ class DashBoard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Heading
-              Text(tDashboardTitle, style: textTheme.bodySmall),
-              Text(tDashboardHeading, style: textTheme.headlineSmall),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(tDashboardTitle, style: textTheme.bodySmall),
+                      Text(tDashboardHeading, style: textTheme.headlineSmall),
+                    ],
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Get.to(() =>const  UbdareDataScreen());
+                    },
+                    style:
+                        ElevatedButton.styleFrom(shape: const CircleBorder()),
+                    child: const Icon(Icons.add_business_outlined),
+                  ),
+                ],
+              ),
               const SizedBox(height: tDashboardPadding),
 
               // Search Box

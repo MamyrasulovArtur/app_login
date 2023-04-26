@@ -28,24 +28,28 @@ class SignUpFormWidget extends StatelessWidget {
           children: [
             const SizedBox(height: tFormHeight - 20),
             TextFormField(
+                keyboardType: TextInputType.name,
                 controller: controller.fullName,
                 decoration: const InputDecoration(
                     label: Text(tFullName),
                     prefixIcon: Icon(Icons.person_outline_outlined))),
             const SizedBox(height: tFormHeight - 20),
             TextFormField(
+                keyboardType: TextInputType.emailAddress,
                 controller: controller.email,
                 decoration: const InputDecoration(
                     label: Text(tEmail),
                     prefixIcon: Icon(Icons.email_outlined))),
             const SizedBox(height: tFormHeight - 20),
             TextFormField(
+                keyboardType: TextInputType.phone,
                 controller: controller.phoneNo,
                 decoration: const InputDecoration(
                     label: Text(tPhoneNo),
                     prefixIcon: Icon(Icons.numbers_outlined))),
             const SizedBox(height: tFormHeight - 20),
             TextFormField(
+                keyboardType: TextInputType.visiblePassword,
                 controller: controller.password,
                 decoration: const InputDecoration(
                     label: Text(tPassword),
@@ -54,7 +58,7 @@ class SignUpFormWidget extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       // SignUpController.instance.registrerUser(
                       //     controller.email.text.trim(),
@@ -70,7 +74,7 @@ class SignUpFormWidget extends StatelessWidget {
                         phoneNo: controller.phoneNo.text.trim(),
                         password: controller.password.text.trim(),
                       );
-                      SignUpController.instance.createUser(user);
+                      await SignUpController.instance.createUserS(user);
                     }
                   },
                   child: Text(tSignup.toUpperCase()),

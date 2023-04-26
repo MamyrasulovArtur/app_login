@@ -20,7 +20,13 @@ class DashboardAppBar extends StatelessWidget implements PreferredSizeWidget {
     var brightness = mediaQuery.platformBrightness;
     final isDarkMode = brightness == Brightness.dark;
     return AppBar(
-      leading: const Icon(Icons.menu, color: Colors.black),
+      leading: IconButton(
+        icon: const Icon(Icons.menu),
+        color: isDarkMode ? Colors.white : Colors.black,
+        onPressed: () async {
+          
+        },
+      ),
       title: Text(tAppName, style: textTheme.headlineMedium),
       centerTitle: true,
       backgroundColor: Colors.transparent,

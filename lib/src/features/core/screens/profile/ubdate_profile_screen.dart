@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:app_doc_1/src/constants/sizes.dart';
 import 'package:app_doc_1/src/constants/text_strings.dart';
 import 'package:app_doc_1/src/features/auth/models/user_model.dart';
@@ -7,6 +5,7 @@ import 'package:app_doc_1/src/features/core/controllers/profile_controller.dart'
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+
 
 class UbdateProfileScreen extends StatelessWidget {
   const UbdateProfileScreen({super.key});
@@ -32,11 +31,12 @@ class UbdateProfileScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(tDefaultSize),
           child: FutureBuilder<List<UserModel>>(
+            // future: controller.getUserData().then((value) => value!),
             future: controller.getAllData(),
-            builder: (context, snapshot) {
+            builder: (context, AsyncSnapshot<List<UserModel>> snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
                 if (snapshot.hasData) {
-                  UserModel userData = snapshot.data as UserModel;
+                  // UserModel userData = snapshot.data as UserModel;
                   // return Column(children: [
                   //   Stack(
                   //     children: [
@@ -138,6 +138,7 @@ class UbdateProfileScreen extends StatelessWidget {
                   //   )),
                   // ]);
                   return ListView.builder(
+                    shrinkWrap: true,
                     itemCount: snapshot.data!.length,
                     itemBuilder: (context, index) {
                       return ListTile(
@@ -146,7 +147,7 @@ class UbdateProfileScreen extends StatelessWidget {
                         title: Text(
                           "Name:${snapshot.data![index].fullName}",
                         ),
-                        subtitle: Text("Email${snapshot.data![index].email}"),
+                        subtitle: Text("Email: ${snapshot.data![index].email}"),
                       );
                     },
                   );
