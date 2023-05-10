@@ -1,12 +1,8 @@
-import 'package:app_doc_1/src/features/auth/controllers/otp_controller.dart';
-import 'package:app_doc_1/src/features/auth/models/user_model.dart';
 import 'package:app_doc_1/src/features/core/models/ubdate_data_model/ubdate_data_model.dart';
 import 'package:app_doc_1/src/repository/auth_repository/auth_repository.dart';
 import 'package:app_doc_1/src/repository/ubdate_data_repository/ubdate_data_repository.dart';
-import 'package:app_doc_1/src/repository/user_repository/user_repository.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
 
 class UbdateController extends GetxController {
   static UbdateController get instance => Get.find();

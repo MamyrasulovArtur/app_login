@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 
-import '../../../repository/auth_repository/auth_repository.dart';
 import '../../../repository/user_repository/user_repository.dart';
 import '../../auth/models/user_model.dart';
 

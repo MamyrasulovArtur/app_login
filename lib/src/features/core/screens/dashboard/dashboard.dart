@@ -1,6 +1,5 @@
 import 'package:app_doc_1/src/constants/sizes.dart';
 import 'package:app_doc_1/src/constants/text_strings.dart';
-import 'package:app_doc_1/src/features/core/screens/profile/ubdate_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
