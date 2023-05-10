@@ -14,7 +14,6 @@ import 'package:get/get.dart';
 
 import '../../../../common_widgets/fade_in_animation/fade_in_animation_controller.dart';
 
-
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -67,7 +66,6 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  
                   Row(
                     children: [
                       Expanded(
@@ -88,24 +86,6 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                       ),
                     ],
-                  ),
-                  SizedBox(
-                    width: mediaQuery.size.width * 0.5,
-                    child: OutlinedButton.icon(
-                      icon: const Icon(Icons.person),
-                      label: const Text('Anonimna'),
-                      onPressed: () async {
-                        final result =
-                            await controllerAnon.signInAnon();
-                        // ignore: unnecessary_null_comparison
-                        if (result == null) {
-                          log("Error signing in");
-                        } else {
-                          log("Signed in");
-                          log(result.uid.toString());
-                        }
-                      },
-                    ),
                   ),
                 ],
               ),

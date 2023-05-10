@@ -85,7 +85,7 @@ class UbdateDataRepository extends GetxController {
           } catch (e) {
             log('$e');
           }
-          // log('images picked');
+          log('images picked');
           // log('$price');
           // log('$quantity');
           // log('$productName');

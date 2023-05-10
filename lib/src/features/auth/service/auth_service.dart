@@ -21,17 +21,6 @@ class AuthService extends GetxController {
         .map(_userFromFireBaseUser as UserS Function(User? event));
   }
 
-  Future signInAnon() async {
-    try {
-      final result = await _auth.signInAnonymously();
-      final User? user = result.user;
-      Get.to(() => const DashBoard());
-      return _userFromFireBaseUser(user as User) as UserS;
-    } catch (e) {
-      log(e.toString());
-      return null;
-    }
-  }
 
   Future signOut() async {
     try {
