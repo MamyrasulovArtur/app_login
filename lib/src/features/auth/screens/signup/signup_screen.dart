@@ -5,7 +5,7 @@ import 'package:app_doc_1/src/constants/text_strings.dart';
 
 import 'package:flutter/material.dart';
 
-import 'widgets/signuo_footer_widget.dart';
+import 'widgets/signup_footer_widget.dart';
 import 'widgets/signup_form_widget.dart';
 
 class SignUpScreen extends StatelessWidget {

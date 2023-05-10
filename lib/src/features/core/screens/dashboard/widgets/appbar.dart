@@ -23,11 +23,9 @@ class DashboardAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: IconButton(
         icon: const Icon(Icons.menu),
         color: isDarkMode ? Colors.white : Colors.black,
-        onPressed: () async {
-          
-        },
+        onPressed: () async {},
       ),
-      title: Text(tAppName, style: textTheme.headlineMedium),
+      title: Text(tAppName, style: textTheme.headlineSmall),
       centerTitle: true,
       backgroundColor: Colors.transparent,
       elevation: 0.0,

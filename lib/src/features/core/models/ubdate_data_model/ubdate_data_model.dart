@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UbdateDataModel {
+  final List? images;
   final String? id;
   final String name;
   final String condition;
@@ -8,6 +9,7 @@ class UbdateDataModel {
   final String amount;
 
   UbdateDataModel({
+    this.images,
     this.id,
     required this.name,
     required this.condition,
@@ -16,6 +18,7 @@ class UbdateDataModel {
   });
   toJson() {
     return {
+      'Images':images,
       'Name': name,
       'Сondition': condition,
       'Price': price,

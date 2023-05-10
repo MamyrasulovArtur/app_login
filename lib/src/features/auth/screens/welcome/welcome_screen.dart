@@ -6,7 +6,6 @@ import 'package:app_doc_1/src/constants/colors.dart';
 import 'package:app_doc_1/src/constants/image_strings.dart';
 import 'package:app_doc_1/src/constants/sizes.dart';
 import 'package:app_doc_1/src/constants/text_strings.dart';
-import 'package:app_doc_1/src/features/auth/models/user.dart';
 import 'package:app_doc_1/src/features/auth/screens/login/login_screen.dart';
 import 'package:app_doc_1/src/features/auth/screens/signup/signup_screen.dart';
 import 'package:app_doc_1/src/features/auth/service/auth_service.dart';
